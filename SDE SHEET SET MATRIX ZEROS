@@ -1,0 +1,28 @@
+
+HINT :-  PEHELE JO ROW AND COLUMN ME ZERO HAI USKO HUM STORE KARDETE HAI EK SET ME KYUNKI DUPLICATE TOH ALLOW HI NHAI HOGA CAUSE WO B S=ZERO HI HOGA 
+US K BAAD ITERATE KARK JO I AND J VALUE WO LIST ME UNKI ROW AND COLUMN ZERO KARDENA
+
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static void setZeros(int matrix[][]) {
+        // Write your code here..
+        HashSet<Integer> a=new HashSet<>();
+        HashSet<Integer> b=new HashSet<>();
+        for(int i=0;i<matrix.length;i++)
+        {
+        for(int j=0;j<matrix[0].length;j++)
+        {
+            if(matrix[i][j]==0){
+                a.add(i);
+                b.add(j);
+            }
+        }
+    }
+      for(int i=0; i<matrix.length; i++){
+            for(int j=0; j<matrix[0].length; j++){
+                if(a.contains(i) || b.contains(j))matrix[i][j]=0;
+            }
+      }
+    }
+}
