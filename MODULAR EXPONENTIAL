@@ -1,0 +1,27 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    static int mod=(int)Math.pow(10,9);
+    public static int modularExponentiation(int x, int n, int m) {
+        // Write your code here.  
+
+
+     long answer = 1;
+
+        long tempX = x;
+        // Run a loop until 'N' > 0.
+        while (n > 0) {
+            // If bitwise and of 'N' with 1 is 1 then multiply answer with 'X'.
+            if ((n & 1) == 1) {
+                answer = (answer * tempX) % m;
+            }
+            // Do modular squaring of 'X'.
+            tempX = (tempX * tempX) % m;
+
+            // Right shift 'N' by 1 bit for next iteration.
+            n >>= 1;
+        }
+        // Return the answer.
+        return (int) (answer % m);
+    }
+}
