@@ -1,0 +1,38 @@
+HINT :- COUNT NUMBER OF 0'S,1'S,2'S ARE THERE INT THE ARRAY AND THEN ITERATE AND ADD THE COUNTS IN THE ARRAR
+
+
+import java.util.* ;
+import java.io.*; 
+public class Solution 
+{
+    public static void sort012(int[] arr)
+    {
+        //Write your code here
+        int z=0;
+        int one=0;
+        int two=0;
+        for(int i=0;i<arr.length;i++){
+            
+            if(arr[i]==0)z++;
+            if(arr[i]==1)one++;
+            if(arr[i]==2)two++;
+            
+        }
+          int k=0;
+        while(z>0){
+            arr[k]=0;
+            k++;
+            z--;
+        }
+        while(one>0){
+            arr[k]=1;
+            k++;
+            one--;
+        }
+        while(two>0){
+            arr[k]=2;
+            k++;
+            two--;
+        }
+    }
+}
